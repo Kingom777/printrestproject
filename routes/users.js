@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const plm=require("passport-local-mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/pin");
-
+mongoose.connect("mongodb+srv://ompethani482:S6KOiBcw5u8xOhIq@pin.qimzddy.mongodb.net/pin");
 const userSchema=mongoose.Schema({
     username:String,
     password:String,
