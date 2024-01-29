@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const dotenv=require('dotenv').config();
 const usermodal= require("./users");
 const postmodel=require("./post");
 const passport = require('passport');
