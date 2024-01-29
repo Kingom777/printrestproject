@@ -1,0 +1,31 @@
+<% include ./partials/header.ejs%>
+<div class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+  <div class="w-[30vw] bg-white px-20 py-8 rounded-[18px]">
+    <div class="flex items-center justify-center mt-0">
+      <img src="https://imgs.search.brave.com/2ZFM2Jq7Q50V6xxvhmzD8zt0Zf5pySFJtYXomY6FRrk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODBiNTdmY2Q5OTk2/ZTI0YmM0M2M1MmUu/cG5n" alt="" class="h-[50px]">
+    </div>
+    <h1 class="leading-none text-2xl text-center mt-4 font-semibold text-zinc-700 capitalize">Welcome to Pinterest</h1>
+    <p class="inline-block font-sm text-zinc-500 mt-3 capitalize flex justify-center">Find new ideas to try</p>
+    <form action="/register" method="post">
+      <label for="Username" class="mt-3  block text-sm font-medium text-gray-700 capitalize">Username</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="text" name="username" placeholder="Username">
+
+      <label for="Username" class="mt-3  block text-sm font-medium text-gray-700 capitalize">FullName</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="text" name="fullname" placeholder="FullName">
+
+      <label for="Email" class="mt-3  block text-sm font-medium text-gray-700 capitalize">Email</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="email" name="email" placeholder="Email">
+
+      <label for="password" class="mt-3 block text-sm font-medium text-gray-700 capitalize">Password</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="password" name="password" placeholder="Password">
+
+      <label for="Birthdate" class="mt-3  block text-sm font-medium text-gray-700 capitalize">Birthdate</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="date" name="birthdate" placeholder="Username">
+
+      <input class="border-2 rounded-lg block mt-4 cursor-pointer font-semibold w-full px-3 py-2 bg-red-600 text-white rounded-full capitalize" type="submit" value="create acount">
+    </form>
+
+    <a href="/" class="font-semibold text-zinc-600 text-center font-sm inline-block mt-4 capitalize">already have an account ? log in</a>
+  </div>
+</div>
+<% include ./partials/footer.ejs%>

@@ -1,0 +1,22 @@
+<% include ./partials/header.ejs%>
+<div class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+  <div class="w-[30vw] bg-white px-20 py-8 rounded-[18px]">
+    <div class="flex items-center justify-center mt-0">
+      <img src="https://imgs.search.brave.com/2ZFM2Jq7Q50V6xxvhmzD8zt0Zf5pySFJtYXomY6FRrk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODBiNTdmY2Q5OTk2/ZTI0YmM0M2M1MmUu/cG5n" alt="" class="h-[50px]">
+    </div>
+    <h1 class="leading-none text-2xl text-center mt-4 font-semibold text-zinc-700 capitalize">Welcome to Pinterest</h1>
+    <form action="/login" method="post">
+      <% if(error.length>0){ %>
+        <P class="error text-center text-red-600 mt-2"><%= error%></P>
+      <% } %>
+      <label for="Username" class="mt-4  block text-sm font-medium text-gray-700 capitalize">Username</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="text" name="username" placeholder="Username">
+      <label for="password" class="mt-4 block text-sm font-medium text-gray-700 capitalize">Password</label>
+      <input class="border-2 rounded-lg block w-full px-3 py-2" type="password" name="password" placeholder="Password">
+      <a href="" class="font-semibold text-center inline-block mt-2 text-zinc-700">Forgot your password?</a>
+      <input class="border-2 rounded-lg block mt-2 cursor-pointer font-bold w-full px-3 py-2 bg-red-600 text-white rounded-full" type="submit" value="Log in">
+    </form>
+    <a href="/register" class="font-semibold text-zinc-600 text-center font-sm inline-block mt-4">Don't have an account ? Sign up!</a>
+  </div>
+</div>
+<% include ./partials/footer.ejs%>
