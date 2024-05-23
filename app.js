@@ -8,7 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const flash=require("connect-flash");
 const passport = require('passport');
-
+require('dotenv').config();
+const mongoose = require('mongoose');
 var app = express();
 
 // view engine setup
@@ -30,6 +31,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const dbUri = process.env.MONGODB_URI;
+
+if (!dbUri) {
+    console.error("MongoDB connection string is missing in the environment variables.");
+    process.exit(1);
+}
+
+mongoose.connect(dbUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000  // Increase timeout to 30 seconds
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log('MongoDB connection error: ', err));
+
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
