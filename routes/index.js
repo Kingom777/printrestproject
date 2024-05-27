@@ -9,9 +9,11 @@ passport.use(new localStrategy(usermodal.authenticate()));
 const upload = require("./multer");
 
 router.get('/', function(req, res, next) {
+  console.log("/page");
   res.render('index',{nav:false,error:req.flash("error")});
 });
 router.get('/register', function(req, res, next) {
+  console.log("/refgister poage ");
   res.render('register',{nav:false});
 });
 
@@ -65,6 +67,7 @@ router.post('/fileupload',upload.single("image") ,async function(req, res, next)
 });
 
 router.post('/register', function(req, res, next) {
+  console.log("register post page done");
   const data= new usermodal({
     username: req.body.username,
     email:req.body.email,
